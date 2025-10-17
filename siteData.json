@@ -109,6 +109,8 @@
       "title": "User Guide",
       "headings": {
         "littlelogbook": "LittleLogBook",
+        "target-user": "Target User",
+        "product-description": "Product description",
         "quick-start": "Quick start",
         "features": "Features",
         "viewing-help-help": "Viewing help : help",
