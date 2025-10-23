@@ -9,7 +9,7 @@ import java.time.format.DateTimeParseException;
 
 /**
  * Represents a Person's birthday in the address book.
- * Guarantees: immutable; is valid as declared in {@link #isValidBirthday(String)}
+ * Guarantees: immutable; is valid as declared in {@link #isValidBirthday(String)}.
  */
 public class Birthday {
 

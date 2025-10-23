@@ -23,8 +23,7 @@ public class RemindCommand extends Command {
     public static final String MESSAGE_NO_BIRTHDAYS_TODAY = "No birthdays today!";
     public static final String MESSAGE_NO_PERSONS = "No contacts in address book.";
 
-    // Number of days to look ahead for upcoming birthdays
-    private static final int UPCOMING_DAYS = 7; // One week before will start reminding.
+    private static final int UPCOMING_DAYS = 7; // Reminds user one week before the birthday
 
     @Override
     public CommandResult execute(Model model) {
@@ -83,7 +82,7 @@ public class RemindCommand extends Command {
     private String buildReminderString(List<Person> todayBirthdays, List<Person> upcomingBirthdays) {
         StringBuilder message = new StringBuilder();
 
-        // Today's birthdays section
+        // Display today's birthdays
         if (!todayBirthdays.isEmpty()) {
             message.append("Happy Birthday to these people today!\n");
             message.append(getFormattedPersonList(todayBirthdays, true));
@@ -92,7 +91,7 @@ public class RemindCommand extends Command {
             message.append(MESSAGE_NO_BIRTHDAYS_TODAY).append("\n\n");
         }
 
-        // Upcoming birthdays section
+        // Display upcoming birthdays
         if (!upcomingBirthdays.isEmpty()) {
             if (!todayBirthdays.isEmpty()) {
                 message.append("\n");
@@ -108,7 +107,8 @@ public class RemindCommand extends Command {
     }
 
     /**
-     * Formats a list of persons with numbering and tags, similar to your previous getStringReminders method.
+     * Formats a list of persons with numbering and tags,
+     * similar to your previous getStringReminders method.
      */
     private String getFormattedPersonList(List<Person> persons, boolean isTodayList) {
         if (persons.isEmpty()) {
@@ -121,10 +121,8 @@ public class RemindCommand extends Command {
                     StringBuilder entry = new StringBuilder();
                     entry.append(i + 1).append(") ").append(person.getName().toString());
 
-                    // Add birthday date
                     entry.append(" - ").append(person.getBirthday().toString());
 
-                    // Add tags if available
                     if (!person.getTags().isEmpty()) {
                         entry.append(" [");
                         entry.append(person.getTags().stream()
@@ -133,7 +131,7 @@ public class RemindCommand extends Command {
                         entry.append("]");
                     }
 
-                    // Add days until birthday for upcoming birthdays
+                    // Calculate days until birthday for upcoming birthdays
                     if (!isTodayList) {
                         long daysUntil = calculateDaysUntilBirthday(person.getBirthday().date, LocalDate.now());
                         if (daysUntil > 0) {
