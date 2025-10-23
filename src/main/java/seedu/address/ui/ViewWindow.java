@@ -44,7 +44,6 @@ public class ViewWindow extends UiPart<Stage> {
 
     /**
      * Creates a new ViewWindow.
-     *
      * @param root Stage to use as the root of the ViewWindow.
      */
     public ViewWindow(Stage root) {
@@ -71,7 +70,6 @@ public class ViewWindow extends UiPart<Stage> {
 
     /**
      * Shows the view window with the specified person's details.
-     *
      * @param person the person whose details will be displayed, cannot be null.
      */
     public void show(Person person) {
@@ -112,8 +110,7 @@ public class ViewWindow extends UiPart<Stage> {
 
     /**
      * Fills all fields with the given person's information.
-     *
-     * @param person the person whose details will be displayed
+     * @param person the person whose details will be displayed.
      */
     private void fillFields(Person person) {
         nameLabel.setText(person.getName().fullName);

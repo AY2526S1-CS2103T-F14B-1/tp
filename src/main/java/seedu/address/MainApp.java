@@ -64,7 +64,7 @@ public class MainApp extends Application {
 
         logic = new LogicManager(model, storage);
 
-        showBirthdayReminders(logic);
+        showBirthdayReminders(logic); // Retrieve and display birthdays.
 
         ui = new UiManager(logic);
     }
