@@ -117,6 +117,7 @@
         "features": "Features",
         "viewing-help-help": "Viewing help : help",
         "adding-a-contact-add": "Adding a contact: add",
+        "adding-a-contact-edit": "Adding a contact: edit",
         "deleting-a-contact-delete": "Deleting a contact: delete",
         "viewing-contact-details-view": "Viewing contact details: view",
         "adding-editing-notes-note": "Adding/Editing notes: note",
@@ -146,14 +147,6 @@
       "title": "",
       "headings": {
         "littlelogbook": "LittleLogBook"
-      },
-      "headingKeywords": {}
-    },
-    {
-      "src": "team/johndoe.md",
-      "title": "John Doe's Project Portfolio Page",
-      "headings": {
-        "project-addressbook-level-3": "Project: AddressBook Level 3"
       },
       "headingKeywords": {}
     },
