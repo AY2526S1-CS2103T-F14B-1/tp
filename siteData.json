@@ -66,8 +66,6 @@
         "adding-contacts": "Adding contacts",
         "editing-contacts": "Editing contacts",
         "deleting-contacts": "Deleting contacts",
-        "finding-contacts": "Finding contacts",
-        "favourite-management": "Favourite management",
         "sorting-contacts": "Sorting contacts",
         "birthday-reminders": "Birthday reminders",
         "note-management": "Note management",
@@ -75,6 +73,8 @@
         "attendance-management": "Attendance management",
         "attendance-reports": "Attendance reports",
         "saving-data": "Saving data",
+        "finding-contacts": "Finding contacts",
+        "favourite-contacts": "Favourite contacts",
         "edge-cases-and-error-handling": "Edge Cases and Error Handling",
         "system-commands": "System commands"
       },
