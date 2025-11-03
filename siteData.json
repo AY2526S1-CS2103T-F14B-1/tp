@@ -78,8 +78,9 @@
         "edge-cases-and-error-handling": "Edge Cases and Error Handling",
         "system-commands": "System commands",
         "appendix-planned-enhancements": "Appendix: Planned Enhancements",
-        "attendance": "Attendance",
-        "edit": "Edit"
+        "1-attendance": "1 Attendance",
+        "2-edit": "2 Edit",
+        "3-birthday-field": "3 Birthday field"
       },
       "headingKeywords": {}
     },
