@@ -667,7 +667,7 @@ testers are expected to do more *exploratory* testing.
 4. **Adding contact with mixed tags (same info excluding birthday year)**
     - Prerequisites: Student contact "John Doe" exists
     - Test case: `add n/John Doe p/98765432 e/john.doe@gmail.com a/Blk 456, Den Road, #01-355 c/K1A b/15-03-2000 t/colleague`<br>
-    - **Expected**: Success - different tags allow identical info.
+    - **Expected**: Success - different tags allow identical info (phone and email).
 
 <br>
 
