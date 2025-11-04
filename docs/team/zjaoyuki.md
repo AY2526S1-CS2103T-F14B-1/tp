@@ -13,17 +13,17 @@ Given below are my contributions to the project.
   * What it does: allows users to store and view birthday information for each contact in the address book.
   * Justification: This feature enhances the product by enabling users to keep track of important personal dates, making the address book more comprehensive for relationship management.
   * Highlights: This enhancement affected existing commands and storage structure. The implementation required modifying the core `Person` class, updating JSON storage adaptation, and ensuring data validation for date formats. It also involved updating both the GUI and CLI components to display birthday information consistently.
-<br>
+
 * **New Feature**: Implemented View command
   * What it does: allows users to view detailed information of a specific contact in a pop-up window by their index in the displayed list.
   * Justification: This feature improves user experience by providing a focused view of individual contact details without cluttering the main list view, while keeping the main window accessible.
   * Highlights: The implementation required creating a new command parser, `ViewWindow` class, and ensuring proper index validation against the filtered list. The feature automatically closes the view window when other commands are executed to maintain data consistency.
-<br>
+
 * **New Feature**: Implemented Remind command
   * What it does: lists contacts with birthdays occurring within a user-specified number of days from today.
   * Justification: transforms the birthday field from passive data into an active reminder tool, improving user engagement and the application's practical value.
   * Highlights: required implementing complex date comparison logic that handles year-rollovers and leap years, creating a new command and parser, and filtering the model based on a dynamic time window.
-<br>
+
 * **Code contributed**: [RepoSense link](https://nus-cs2103-ay2526s1.github.io/tp-dashboard/?search=&sort=groupTitle&sortWithin=title&timeframe=commit&mergegroup=&groupSelect=groupByRepos&breakdown=true&checkedFileTypes=docs~functional-code~test-code~other&since=2025-09-19T00%3A00%3A00&filteredFileName=&tabOpen=true&tabType=authorship&tabAuthor=zjaoyuki&tabRepo=AY2526S1-CS2103T-F14b-1%2Ftp%5Bmaster%5D&authorshipIsMergeGroup=false&authorshipFileTypes=docs~functional-code~test-code~other&authorshipIsBinaryFileTypeChecked=false&authorshipIsIgnoredFilesChecked=false)
 
 * **Enhancements to existing features**:
