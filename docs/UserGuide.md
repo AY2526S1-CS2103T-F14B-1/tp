@@ -371,21 +371,21 @@ delete n/John Doe
 
 **1. Delete by INDEX**
 
-|                                      Outcome Type                                       | Scenario                            | Message                                                        | GUI Action                                                 |
-|:---------------------------------------------------------------------------------------:|-------------------------------------|----------------------------------------------------------------|------------------------------------------------------------|
-|                      <span style="color: green">**Success**</span>                      | Contact deleted                     | `Deleted Person: <Person>`                                     | Contact list refreshes without deleted entry               |
-|                       <span style="color: red">**Failure**</span>                       | Invalid index                       | `The person index provided is invalid`                         | No changes                                                 |
-|                       <span style="color: red">**Failure**</span>                       | No index provided                   | `Invalid command format!` _(with correct format guidance)_     | No changes                                                 |
-|              <span style="color: orange">**Confirmation Required**</span>               | Double confirmation before deletion | `Are you sure you want to delete this contact <Person> ?`      | Pop-up window with the selected person information appears |
+|                                      Outcome Type                                       | Scenario                            | Message                                                                                          | GUI Action                                                 |
+|:---------------------------------------------------------------------------------------:|-------------------------------------|--------------------------------------------------------------------------------------------------|------------------------------------------------------------|
+|                      <span style="color: green">**Success**</span>                      | Contact deleted                     | `Deleted Person: <Person>` _(with details on person deleted)_                                    | Contact list refreshes without deleted entry               |
+|                       <span style="color: red">**Failure**</span>                       | Invalid index                       | `The person index provided is invalid`                                                           | No changes                                                 |
+|                       <span style="color: red">**Failure**</span>                       | No index provided                   | `Invalid command format!` _(with correct format guidance)_                                       | No changes                                                 |
+|              <span style="color: orange">**Confirmation Required**</span>               | Double confirmation before deletion | `Are you sure you want to delete this contact <Person> ?` _(with information on how to proceed)_ | Pop-up window with the selected person information appears |
 
 **2. Delete by NAME**
 
-|                         Outcome Type                         | Scenario                                                                   | Message                                                                                               | GUI Action                                                 |
-|:------------------------------------------------------------:|----------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
-|        <span style="color: green">**Success**</span>         | Contact deleted                                                            | `Deleted Person: <Person>`                                                                            | Contact list refreshes without deleted entry               |
-|         <span style="color: red">**Failure**</span>          | No matches found                                                           | `No matches found. Please try again`                                                                  | Pop-up window appears                                      |
-| <span style="color: orange">**Confirmation Required**</span> | Multiple matches found                                                     | `Possible matches found. Type index and ENTER to delete or ESC to cancel and go back to main window`  | Pop-up window with list of matches appears                 |
-| <span style="color: orange">**Confirmation Required**</span> | One exact same name found / selected - Double confirmation before deletion | `Are you sure you want to delete this contact <Person> ?`                                             | Pop-up window with the selected person information appears |
+|                         Outcome Type                         | Scenario                                                                   | Message                                                                                                                                      | GUI Action                                                 |
+|:------------------------------------------------------------:|----------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
+|        <span style="color: green">**Success**</span>         | Contact deleted                                                            | `Deleted Person: <Person>` _(with details on person deleted)_                                                                                | Contact list refreshes without deleted entry               |
+|         <span style="color: red">**Failure**</span>          | No matches found                                                           | `No matches found. Please try again` _(with information on how to proceed)_                                                                  | Pop-up window appears                                      |
+| <span style="color: orange">**Confirmation Required**</span> | Multiple matches found                                                     | `Possible matches found. Type index and ENTER to delete or ESC to cancel and go back to main window` _(with information on how to proceed)_  | Pop-up window with list of matches appears                 |
+| <span style="color: orange">**Confirmation Required**</span> | One exact same name found / selected - Double confirmation before deletion | `Are you sure you want to delete this contact <Person> ?` _(with information on how to proceed)_                                             | Pop-up window with the selected person information appears |
 
 <box type="warning">
 <strong>Note:</strong> When the popup window appears, you must respond to it before continuing. 
@@ -536,7 +536,7 @@ find-n Tan
 
 * Find commands filter contacts cumulatively. Refer to <a href="#glossary">Glossary</a> section on cumulative filtering to find out more! <br>
 
-* Using add, edit, note, list commands will revert to displaying **all** contacts!
+* Using `add`, `edit`, `note`, `list` commands will revert to displaying **all** contacts!
 </box>
 
 [//]: # (COMMAND BREAK)
@@ -580,7 +580,7 @@ find-p 3133
 
 * Find commands filter contacts cumulatively. Refer to <a href="#glossary">Glossary</a> section on cumulative filtering to find out more! <br>
 
-* Using add, edit, note, list commands will revert to displaying **all** contacts!
+* Using `add`, `edit`, `note`, `list` commands will revert to displaying **all** contacts!
   </box>
 
 [//]: # (COMMAND BREAK)
@@ -624,7 +624,7 @@ find-t ague
 
 * Find commands filter contacts cumulatively. Refer to <a href="#glossary">Glossary</a> section on cumulative filtering to find out more! <br>
 
-* Using add, edit, note, list commands will revert to displaying **all** contacts!
+* Using `add`, `edit`, `note`, `list` commands will revert to displaying **all** contacts!
   </box>
 
 [//]: # (COMMAND BREAK)
@@ -669,7 +669,7 @@ find-c 2 A
 
 * Find commands filter contacts cumulatively. Refer to <a href="#glossary">Glossary</a> section on cumulative filtering to find out more! <br>
 
-* Using add, edit, note, list commands will revert to displaying **all** contacts!
+* Using `add`, `edit`, `note`, `list` commands will revert to displaying **all** contacts!
   </box>
 
 [//]: # (COMMAND BREAK)
@@ -830,7 +830,7 @@ attendance INDEX(es) s/STATUS [d/DATE]
 <box type="info" seamless>
 
 **Example on date validation:** <br>
-A student born in 01-01-2000 can have their attendance mark from 01-01-2000 until 01-01-2000. But assuming today is 01-01-1999, then their attendance could only be mark from 01-01-2000 until 01-01-1999.  
+A student born in 01-01-2000 can have their attendance mark from 01-01-2000 until 01-01-2006. But assuming today is 01-01-1999, then their attendance could only be mark from 01-01-2000 until 01-01-1999.  
   </box>
 
 ##### Sample Commands
@@ -1091,6 +1091,9 @@ Furthermore, certain edits can cause LittleLogBook to behave in unexpected ways 
 
 **Q**: Where are attendance reports saved?<br>
 **A**: All CSV reports are saved in the data/ folder within your LittleLogBook directory.
+
+**Q**: How do I open the CSV file nicely? The current data is a bit hard to see.<br>
+**A**: Please refer to <a href="#open-csv-guide">this tutorial</a> to learn how to open CSV file into a nice format.
 
 <br>
 

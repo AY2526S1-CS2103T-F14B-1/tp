@@ -651,16 +651,17 @@ testers are expected to do more *exploratory* testing.
     - **Expected:** New student contact added successfully with all specified fields.
 
 1. **Adding a colleague contact with optional note**
-    - Test case: `add n/Mary Tan p/91234567 e/marytan@e.nut.edu a/123 Jurong West Ave 6 c/K2B b/24-12-2017 t/colleague desc/Allergic to peanuts`<br> 
+    - Test case: `add n/Mary Tan p/91234567 e/marytan@e.nut.edu a/123 Jurong West Ave 6 c/K2B b/24-12-2000 t/colleague desc/Allergic to peanuts`<br> 
     - **Expected**: New colleague contact added with note.
 
 2. **Adding a colleague contact with mandatory fields only**
-    - Test case: `add n/Marie p/98765432 e/john.doe@gmail.com a/123 Main Street c/K1A b/15-03-2018 t/colleague`
+    - Test case: `add n/Marie p/98765432 e/john.doe@gmail.com a/123 Main Street c/K1A b/15-03-2000 t/colleague`
     - **Expected:** New colleague contact added with only required fields.
 
 1. **Adding contact with mixed tags (same info)**
     - Prerequisites: Student contact "John Doe" exists
-    - Test case: `add n/John Doe p/98765432 e/john.doe@gmail.com a/Blk 456, Den Road, #01-355 c/K1A b/15-03-2018 t/colleague`<br>**Expected**: Success - different tags allow identical info.
+    - Test case: `add n/John Doe p/98765432 e/john.doe@gmail.com a/Blk 456, Den Road, #01-355 c/K1A b/15-03-2018 t/colleague`<br>
+    - **Expected**: Success - different tags allow identical info.
 
 1. **Invalid parameter formats**
     - Test case: `add n/John123 p/123 e/invalid-email a/ c/InvalidClass b/32-13-2020 t/invalidtag`<br>
@@ -710,7 +711,7 @@ testers are expected to do more *exploratory* testing.
 <br>
 
 2. **Deleting a contact by invalid index**
-   - Test case: `delete 1`, `delete`, `delete x`, `...` (where x is larger than the list size)
+   - Test case: `delete`, `delete x`, `...` (where x is larger than the list size)
    - **Expected:** No person is deleted. Error details shown in the status message. Status bar remains the same.
 
 <br>
@@ -730,9 +731,9 @@ testers are expected to do more *exploratory* testing.
 <br>
 
 5. **Deleting a contact by name with a invalid name**
-    - Prerequisites: List all persons. No person in the list with `random name` in their name..
+    - Prerequisites: List all persons. No person in the list with `random name` in their name.
     - Test case: `delete n/random name`
-    - **Expected:** A popup shows no matches found. Pressing Enter returns to the main window.
+    - **Expected:** Press Escape to cancel the deletion or Enter to return to main window.
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
