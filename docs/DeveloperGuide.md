@@ -647,7 +647,7 @@ testers are expected to do more *exploratory* testing.
 ##### Adding a valid contact
 
 1. **Adding a student contact with all fields**
-    - Test case: `add n/John Doe p/98765432 e/john.doe@gmail.com a/123 Main Street c/K1A b/15-03-2018 t/student desc/Allergic to peanuts`
+    - Test case: `add n/John Doe p/98765432 e/john.doe@gmail.com a/123 Main Street c/K1A b/15-03-2019 t/student desc/Allergic to peanuts`
     - **Expected:** New student contact added successfully with all specified fields.
 
 <br>
