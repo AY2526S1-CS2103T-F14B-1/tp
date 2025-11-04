@@ -34,7 +34,7 @@ manage students' and parents' contact information efficiently.
    <a href="https://se-education.org/guides/tutorials/javaInstallationMac.html">here</a>.
    </box>
 
-1. Download the latest `.jar` file from [here](https://github.com/AY2526S1-CS2103T-F14B-1/tp/releases/download/v1.5.1/littlelogbook.jar).
+1. Download the latest `.jar` file from [here](https://github.com/AY2526S1-CS2103T-F14B-1/tp/releases/download/v1.6/littlelogbook.jar).
 
 1. Copy the file to the folder you want to use as the _home folder_ for your LittleLogBook.
 
@@ -173,42 +173,42 @@ add n/NAME p/PHONE e/EMAIL a/ADDRESS c/CLASS b/BIRTHDAY t/TAG [desc/NOTE]
 ```
 
 ##### Parameters & Validation Rules
-|                       Parameter                       | Validation Rules                                                         |
-|:-----------------------------------------------------:|--------------------------------------------------------------------------|
+|                       Parameter                       | Validation Rules                                                                                                                                                                                                                                                                                                  |
+|:-----------------------------------------------------:|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   <span style="color: #e83f8b">**NAME (n/)**</span>   | Alphabetic characters, spaces, hyphens, apostrophes only. Must contain at least 2 letters, cannot be only punctuation. No consecutive punctuation. Must have more letters than punctuation marks (e.g., `O'Connor` is <span style="color: green">valid</span>, `a'a'` is <span style="color: red">invalid</span>) |
-|                                                       | Leading/trailing spaces trimmed, multiple spaces collapsed               |
-|                                                       | Case-insensitive for duplicates                                          |
-|                                                       | Cannot contain command prefixes (n/, p/, e/, a/, c/, t/, b/, desc/, d/, m/, s/, f/, o/) |
-|                                                       | Error if empty or contains numbers/symbols                               |
-|  <span style="color: #e83f8b">**PHONE (p/)**</span>   | 8-digit Singapore numbers starting with 6 (landline), 8, or 9 (mobile)   |
-|                                                       | Valid formats: 6XXXXXXX (landline), 8XXXXXXX or 9XXXXXXX (mobile)        |
-|                                                       | Examples: 61234567, 81234567, 91234567                                   |
-|                                                       | Spaces/dashes ignored (e.g., 9123-4567 or 9123 4567)                     |
-|                                                       | Error if not numeric, wrong length, or invalid starting digit            |
-|  <span style="color: #e83f8b">**EMAIL (e/)**</span>   | Must follow standard email format with domain containing at least one period |
-|                                                       | Case-insensitive (automatically converted to lowercase)                  |
-|                                                       | Domain must have at least one dot (e.g., `user@example.com` is <span style="color: green">valid</span>, `user@example` is <span style="color: red">invalid</span>) |
-|                                                       | Error if invalid format                                                  |
-| <span style="color: #e83f8b">**ADDRESS (a/)**</span>  | Alphanumeric characters, spaces, and common address punctuation (comma, period, dash, hash, slash, parentheses). No symbols like @, *, $, !, ?, +, ;, etc. |
-|                                                       | Must be at least 15 characters long (after trimming and space normalization) |
-|                                                       | Leading/trailing spaces trimmed, multiple spaces collapsed to single spaces |
-|                                                       | Error if empty, contains only whitespace, or under 15 characters        |
-|  <span style="color: #e83f8b">**CLASS (c/)**</span>   | Alphanumeric characters only (letters and numbers), 1-20 characters |
-|                                                       | Case-insensitive                                                         |
-|                                                       | Examples: K1A, K1D, Nursery, Harmony, Class123                          |
-| <span style="color: #e83f8b">**BIRTHDAY (b/)**</span> | Date in dd-MM-yyyy format                                                |
-|                                                       | Must be a valid date (from 01-01-1900 to today's date)                   |
-|                                                       | Student's birthday must be 3, 4, 5 or 6 years old.                      |
-|                                                       | Colleague's birthday must be 18 years old or older.                      |
-|                                                       | Age is calculated using Singapore education system rules: Age = Current Year - Birth Year (Not by exact date) |
-|   <span style="color: #e83f8b">**TAG (t/)**</span>    | Exactly one tag                                                          |
-|                                                       | Must be either 'student' or 'colleague' (case-insensitive)               |
-| <span style="color: #6b7280">**NOTE (desc/)**</span>  | Any text up to 500                                                       |
-|                                                       | Leading/trailing spaces trimmed                                          |
+|                                                       | Leading/trailing spaces trimmed, multiple spaces collapsed                                                                                                                                                                                                                                                        |
+|                                                       | Case-insensitive for duplicates                                                                                                                                                                                                                                                                                   |
+|                                                       | Cannot contain command prefixes (n/, p/, e/, a/, c/, t/, b/, desc/, d/, m/, s/, f/, o/)                                                                                                                                                                                                                           |
+|                                                       | Error if empty or contains numbers or other symbols not specified above                                                                                                                                                                                                                                           |
+|  <span style="color: #e83f8b">**PHONE (p/)**</span>   | 8-digit Singapore numbers starting with 6 (landline), 8, or 9 (mobile)                                                                                                                                                                                                                                            |
+|                                                       | Valid formats: 6XXXXXXX (landline), 8XXXXXXX or 9XXXXXXX (mobile)                                                                                                                                                                                                                                                 |
+|                                                       | Examples: 61234567, 81234567, 91234567                                                                                                                                                                                                                                                                            |
+|                                                       | Spaces/dashes ignored (e.g., 9123-4567 or 9123 4567)                                                                                                                                                                                                                                                              |
+|                                                       | Error if not numeric, wrong length, or invalid starting digit                                                                                                                                                                                                                                                     |
+|  <span style="color: #e83f8b">**EMAIL (e/)**</span>   | Must follow standard email format with domain containing at least one period                                                                                                                                                                                                                                      |
+|                                                       | Case-insensitive (automatically converted to lowercase)                                                                                                                                                                                                                                                           |
+|                                                       | Domain must have at least one period (e.g., `user@example.com` is <span style="color: green">valid</span>, `user@example` is <span style="color: red">invalid</span>)                                                                                                                                             |
+|                                                       | Error if invalid format                                                                                                                                                                                                                                                                                           |
+| <span style="color: #e83f8b">**ADDRESS (a/)**</span>  | Alphanumeric characters, spaces, and common address punctuation (comma, period, dash, hash, slash, parentheses). No symbols like @, *, $, !, ?, +, ;, etc.                                                                                                                                                        |
+|                                                       | Must be at least 15 characters long (after trimming and space normalization)                                                                                                                                                                                                                                      |
+|                                                       | Leading/trailing spaces trimmed, multiple spaces collapsed to single spaces                                                                                                                                                                                                                                       |
+|                                                       | Error if empty, contains only whitespace, or under 15 characters                                                                                                                                                                                                                                                  |
+|  <span style="color: #e83f8b">**CLASS (c/)**</span>   | Alphanumeric characters only (letters and numbers), 1-20 characters                                                                                                                                                                                                                                               |
+|                                                       | Case-insensitive                                                                                                                                                                                                                                                                                                  |
+|                                                       | Examples: K1A, K1D, Nursery, Harmony, Class123                                                                                                                                                                                                                                                                    |
+| <span style="color: #e83f8b">**BIRTHDAY (b/)**</span> | Date in dd-MM-yyyy format                                                                                                                                                                                                                                                                                         |
+|                                                       | Must be a valid date (from 01-01-1900 to today's date)                                                                                                                                                                                                                                                            |
+|                                                       | Student's birthday must be 3, 4, 5 or 6 years old.                                                                                                                                                                                                                                                                |
+|                                                       | Colleague's birthday must be 18 years old or older.                                                                                                                                                                                                                                                               |
+|                                                       | Age is calculated using Singapore education system rules: Age = Current Year - Birth Year (Not by exact date)                                                                                                                                                                                                     |
+|   <span style="color: #e83f8b">**TAG (t/)**</span>    | Exactly one tag                                                                                                                                                                                                                                                                                                   |
+|                                                       | Must be either 'student' or 'colleague' (case-insensitive)                                                                                                                                                                                                                                                        |
+| <span style="color: #6b7280">**NOTE (desc/)**</span>  | Any text up to 500                                                                                                                                                                                                                                                                                                |
+|                                                       | Leading/trailing spaces trimmed                                                                                                                                                                                                                                                                                   |
 
 <box type="warning">
 <strong>Duplicate Contact Detection:</strong><br>
-The system uses different rules for detecting duplicates based on contact type. **Contacts with different tags (student vs colleague) are never considered duplicates**, allowing you to have a student and colleague with the same information.<br><br>
+The system uses different rules for detecting duplicates based on contact type. <strong>Contacts with different tags (student vs colleague) are never considered duplicates</strong>, allowing you to have a student and colleague with the same information.<br><br>
 
 <strong>For Colleagues (t/colleague):</strong><br>
 • Duplicate if: same phone number OR same email address<br>
@@ -388,7 +388,7 @@ delete n/John Doe
 | <span style="color: orange">**Confirmation Required**</span> | One exact same name found / selected - Double confirmation before deletion | `Are you sure you want to delete this contact <Person> ?`                                             | Pop-up window with the selected person information appears |
 
 <box type="warning">
-<strong>Note:</strong> When a popup window appears, you must respond to it before continuing. 
+<strong>Note:</strong> When the popup window appears, you must respond to it before continuing. 
 The main window will not respond until you either confirm or cancel the deletion.
 </box>
 
@@ -414,7 +414,7 @@ The main window will not respond until you either confirm or cancel the deletion
 
 ### Viewing contact details: `view`
 
-**Purpose**: Shows full information of a contact (including notes, classes, attendance).
+**Purpose**: Shows full information of a contact (including emergency contact, notes, and attendance).
 
 ##### Format
 ```shell

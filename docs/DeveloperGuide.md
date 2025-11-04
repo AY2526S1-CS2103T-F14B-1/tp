@@ -141,15 +141,6 @@ The `Model` component,
 * stores a `UserPref` object that represents the user’s preferences. This is exposed to the outside as a `ReadOnlyUserPref` objects.
 * does not depend on any of the other three components (as the `Model` represents data entities of the domain, they should make sense on their own without depending on other components)
 
-<box type="info" seamless>
-
-**Note:** An alternative (arguably, a more OOP) model is given below. It has a `Tag` list in the `AddressBook`, which `Person` references. This allows `AddressBook` to only require one `Tag` object per unique tag, instead of each `Person` needing their own `Tag` objects.<br>
-
-<puml src="diagrams/BetterModelClassDiagram.puml" width="700" />
-
-</box>
-
-
 ### Storage component
 
 **API** : [`Storage.java`](https://github.com/AY2526S1-CS2103T-F14B-1/tp/tree/master/src/main/java/seedu/address/storage/Storage.java)
@@ -660,7 +651,8 @@ testers are expected to do more *exploratory* testing.
     - **Expected:** New student contact added successfully with all specified fields.
 
 1. **Adding a colleague contact with optional note**
-    - Test case: `add n/Mary Tan p/91234567 e/marytan@e.nut.edu a/123 Jurong West Ave 6 c/K2B b/24-12-2017 t/colleague desc/Allergic to peanuts`<br>**Expected**: New colleague contact added with note.
+    - Test case: `add n/Mary Tan p/91234567 e/marytan@e.nut.edu a/123 Jurong West Ave 6 c/K2B b/24-12-2017 t/colleague desc/Allergic to peanuts`<br> 
+    - **Expected**: New colleague contact added with note.
 
 2. **Adding a colleague contact with mandatory fields only**
     - Test case: `add n/Marie p/98765432 e/john.doe@gmail.com a/123 Main Street c/K1A b/15-03-2018 t/colleague`
@@ -671,7 +663,8 @@ testers are expected to do more *exploratory* testing.
     - Test case: `add n/John Doe p/98765432 e/john.doe@gmail.com a/Blk 456, Den Road, #01-355 c/K1A b/15-03-2018 t/colleague`<br>**Expected**: Success - different tags allow identical info.
 
 1. **Invalid parameter formats**
-    - Test case: `add n/John123 p/123 e/invalid-email a/ c/InvalidClass b/32-13-2020 t/invalidtag`<br>**Expected**: Multiple validation errors shown.
+    - Test case: `add n/John123 p/123 e/invalid-email a/ c/InvalidClass b/32-13-2020 t/invalidtag`<br>
+    - **Expected**: Multiple validation errors shown.
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
@@ -766,37 +759,43 @@ testers are expected to do more *exploratory* testing.
 
 1. **Manual reminder check with birthdays today and upcoming**
     - Prerequisites: At least one contact has birthday today, and at least one has birthday within next 7 days
-    - Test case: `remind`<br>**Expected**: Shows two sections: "Happy Birthday to these people today!" and "Upcoming birthdays in the next 7 days:" with numbered lists.
+    - Test case: `remind`<br>
+    - **Expected**: Shows two sections: "Happy Birthday to these people today!" and "Upcoming birthdays in the next 7 days:" with numbered lists.
 
 <br>
 
 2. **Manual reminder with only upcoming birthdays**
     - Prerequisites: No contacts have birthday today, but some have birthdays within next 7 days
-    - Test case: `remind`<br>**Expected**: Shows "No birthdays today!" followed by "Upcoming birthdays in the next 7 days:" section.
+    - Test case: `remind`<br>
+    - **Expected**: Shows "No birthdays today!" followed by "Upcoming birthdays in the next 7 days:" section.
 
 <br>
 
 3. **Manual reminder with no upcoming birthdays**
     - Prerequisites: No contacts have birthdays today or within next 7 days
-    - Test case: `remind`<br>**Expected**: Shows "No upcoming birthdays found." message.
+    - Test case: `remind`<br>
+    - **Expected**: Shows "No upcoming birthdays found." message.
 
 <br>
 
 4. **Manual reminder with empty address book**
     - Prerequisites: Clear all contacts using `clear` command
-    - Test case: `remind`<br>**Expected**: Shows "No contacts in LittleLogBook." message.
+    - Test case: `remind`<br>
+    - **Expected**: Shows "No contacts in LittleLogBook." message.
 
 <br>
 
 5. **Automatic reminder on startup**
     - Prerequisites: Contacts with birthdays today and/or upcoming exist
-    - Action: Close and reopen the app<br>**Expected**: Birthday reminders shown automatically in the result display when app starts.
+    - Action: Close and reopen the app<br>
+    - **Expected**: Birthday reminders shown automatically in the result display when app starts.
 
 <br>
 
 6. **Reminder formatting verification**
     - Prerequisites: Contacts with various birthday scenarios exist
-    - Test case: `remind`<br>**Expected**: Each entry shows:
+    - Test case: `remind`<br>
+    - **Expected**: Each entry shows:
         - Name in correct format
         - Birthday in dd-MM-yyyy format
         - Tags in square brackets (if present)
@@ -806,13 +805,15 @@ testers are expected to do more *exploratory* testing.
 <br>
 
 7. **Reminder with extraneous parameters**
-    - Test case: `remind extra parameter`<br>**Expected**: Command works normally (extraneous parameters ignored).
+    - Test case: `remind extra parameter`<br>
+    - **Expected**: Command works normally (extraneous parameters ignored).
 
 <br>
 
 8. **Cross-year birthday handling**
     - Prerequisites: Test in late December with contacts having January birthdays
-    - Test case: `remind`<br>**Expected**: Correctly shows upcoming birthdays that cross into next year.
+    - Test case: `remind`<br>
+    - **Expected**: Correctly shows upcoming birthdays that cross into next year.
 
 <br>
 
@@ -847,17 +848,20 @@ testers are expected to do more *exploratory* testing.
 
 1. **Viewing valid contact**
     - Prerequisites: Multiple contacts in list
-    - Test case: `view 1`<br>**Expected**: Popup window shows full contact details.
+    - Test case: `view 1`<br>
+    - **Expected**: Popup window shows full contact details.
 
 <br>
 
 2. **Viewing student vs colleague**
-    - Test cases: `view 1` (student), `view 2` (colleague)<br>**Expected**: Different layouts shown (student shows attendance, colleague does not).
+    - Test cases: `view 1` (student), `view 2` (colleague)<br>
+    - **Expected**: Different layouts shown (student shows attendance, colleague does not).
 
 <br>
 
 3. **Viewing with invalid index**
-    - Test case: `view 0`<br>**Expected**: Error message about invalid index.
+    - Test case: `view 0`<br>
+    - **Expected**: Error message about invalid index.
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
@@ -956,7 +960,7 @@ testers are expected to do more *exploratory* testing.
     - Navigate to the `data/` folder in your LittleLogBook directory
     - Delete or rename the `littlelogbook.json` file
     - Launch LittleLogBook
-    - **Expected behavior:** LittleLogBook should start with a fresh empty address book and create a new `littlelogbook.json` file automatically
+    - **Expected:** LittleLogBook should start with a fresh empty address book and create a new `littlelogbook.json` file automatically
 
 <br>
 
@@ -969,13 +973,13 @@ testers are expected to do more *exploratory* testing.
         - Add invalid date formats in birthday/attendance fields
         - Remove the entire `"persons"` array or make it null
     - Save the file and launch LittleLogBook
-    - **Expected behavior:** LittleLogBook should detect the corruption and start with an empty address book.
+    - **Expected:** LittleLogBook should detect the corruption and start with an empty address book.
 
 <br>
 
 3. **Testing with invalid birthday formats:**
     - Change a contact's birthday to an invalid format (e.g., `"32-13-2020"`, `"birthday": "not-a-date"`)
-    - **Expected behavior:** LittleLogBook should detect the corruption and start with an empty address book.
+    - **Expected:** LittleLogBook should detect the corruption and start with an empty address book.
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
@@ -989,7 +993,7 @@ testers are expected to do more *exploratory* testing.
         - Test case: `find-n zy z y`
         - Test case: `find-c k1A`
     - Press enter
-    - **Expected behavior:** LittleLogBook should show empty contact list with information on how to proceed.
+    - **Expected:** LittleLogBook should show empty contact list with information on how to proceed.
 
 <br>
 
@@ -1001,14 +1005,14 @@ testers are expected to do more *exploratory* testing.
         - Test case: `find-n b d`
         - Test case: `find-t stu coll`
     - Press enter
-    - **Expected behavior:** LittleLogBook should show filtered contact list of only those that match the input string with information on how to proceed.
+    - **Expected:** LittleLogBook should show filtered contact list of only those that match the input string with information on how to proceed.
 
 <br>
 
 3. **Simulating find with no parameter inputs:**
    - Input the find command with no parameter
-        - - Test case: `find-c `
-   - **Expected behavior:** LittleLogBook should say `invalid command format` and guide users on next steps.
+        - Test case: `find-c `
+   - **Expected:** LittleLogBook should say `invalid command format` and guide users on next steps.
    
 <br>
    
@@ -1020,7 +1024,7 @@ testers are expected to do more *exploratory* testing.
        - Test case: `find-n @ !`
        - Test case: `find-c !`
    - Press enter
-   - **Expected behavior:** LittleLogBook should state the valid inputs that are allowed to guide user.
+   - **Expected:** LittleLogBook should state the valid inputs that are allowed to guide user.
 
 <box type="info" seamless="true">
 
@@ -1037,7 +1041,7 @@ testers are expected to do more *exploratory* testing.
     - Input the `fav` command with index of newly added contact 
         - Test case: `fav 1` assuming added contact is the first contact
     - Press enter
-    - **Expected behavior:** LittleLogBook should show a successful message with the name of the added contact. There will be a star icon indicated next to that contact.
+    - **Expected:** LittleLogBook should show a successful message with the name of the added contact. There will be a star icon indicated next to that contact.
 
 <br>
 
@@ -1047,7 +1051,7 @@ testers are expected to do more *exploratory* testing.
     - Input the favourite command with index of that specific contact
         - Test case: `fav 1` assuming added contact is the first contact
     - Press enter
-    - **Expected behavior:** LittleLogBook should show succesful message with information on the contact that is removed from favourites. The star icon next to the contact will disappear.
+    - **Expected:** LittleLogBook should show succesful message with information on the contact that is removed from favourites. The star icon next to the contact will disappear.
 
 <br>
    
@@ -1057,7 +1061,7 @@ testers are expected to do more *exploratory* testing.
         - Test case: `fav 2` assuming added contacts are the first and second respectively
     - Input `list` command
     - Press enter
-    - **Expected behavior:** LittleLogBook should show those added to favourites on the top of the list
+    - **Expected:** LittleLogBook should show those added to favourites on the top of the list
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
@@ -1142,7 +1146,7 @@ testers are expected to do more *exploratory* testing.
 
 <br>
 
-### 5 Birthday field
+### 5. Birthday field
 - **Handle age-based expiration for existing students by creating graduated students reminder system**: Currently, students who are 6 years old will become invalid next year when they turn 7. We will implement an annual check that automatically flags or archives students who have reached the maximum age with a confirmation prompt for deletion. Afterward, LittleLogBook will remind the teacher to remove graduated students.
   - Example: Running the app after a year would show: "3 students have reached invalid age. Use cleanup_age to review and remove them."
 
@@ -1151,3 +1155,9 @@ testers are expected to do more *exploratory* testing.
 ### 6. General
 - **Smarter parsing for all parameter**: Currently, some parameter parser like `a/ADDRESS`, `b/BIRTHDAY`, `c/CLASS`, and `t/TAG` does not accept input which has multiple spaces inside. We plan to apply the same smart parsing detection to the rest of the command to reduce error and increase user experience.
   - Example: User accidentally typed double space instead of one → should still allow the code to run if that is the only mistake.
+
+<br> 
+
+- **Enhanced duplicate action feedback**: Currently, commands like note provide identical success messages for both adding/removing notes and repeated identical actions. 
+  - Example: When a user executes note 1 to remove a note, then runs the same command again, the system should detect there's no note to remove and provide appropriate feedback.
+
