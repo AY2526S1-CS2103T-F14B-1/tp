@@ -666,7 +666,7 @@ testers are expected to do more *exploratory* testing.
 
 4. **Adding contact with mixed tags (same info)**
     - Prerequisites: Student contact "John Doe" exists
-    - Test case: `add n/John Doe p/98765432 e/john.doe@gmail.com a/Blk 456, Den Road, #01-355 c/K1A b/15-03-2018 t/colleague`<br>
+    - Test case: `add n/John Doe p/98765432 e/john.doe@gmail.com a/Blk 456, Den Road, #01-355 c/K1A b/15-03-2020 t/colleague`<br>
     - **Expected**: Success - different tags allow identical info.
 
 <br>
