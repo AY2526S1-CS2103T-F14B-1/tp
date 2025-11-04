@@ -647,7 +647,7 @@ testers are expected to do more *exploratory* testing.
 ##### Adding a valid contact
 
 1. **Adding a student contact with all fields**
-    - Test case: `add n/John Doe p/98765432 e/john.doe@gmail.com a/123 Main Street c/K1A b/15-03-2018 t/student desc/Allergic to peanuts`
+    - Test case: `add n/John Doe p/98765432 e/john.doe@gmail.com a/123 Main Street c/K1A b/15-03-2019 t/student desc/Allergic to peanuts`
     - **Expected:** New student contact added successfully with all specified fields.
 
 <br>
@@ -664,10 +664,10 @@ testers are expected to do more *exploratory* testing.
 
 <br>
 
-4. **Adding contact with mixed tags (same info)**
-    - Prerequisites: Student contact "John Doe" exists
-    - Test case: `add n/John Doe p/98765432 e/john.doe@gmail.com a/Blk 456, Den Road, #01-355 c/K1A b/15-03-2018 t/colleague`<br>
-    - **Expected**: Success - different tags allow identical info.
+4. **Adding contact with different tag (same info excluding birthday year)**
+    - Prerequisites: Student contact "John Doe" exists (from point 1)
+    - Test case: `add n/John Doe p/98765432 e/john.doe@gmail.com a/123 Main Street c/K1A b/15-03-2000 t/colleague desc/Allergic to peanuts`<br>
+    - **Expected**: Success - different tags allow identical info (other than birthday).
 
 <br>
 
